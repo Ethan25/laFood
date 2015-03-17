@@ -1,4 +1,3 @@
-
 public interface Queue
 {
   public void enqueue(Object x);
