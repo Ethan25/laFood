@@ -15,16 +15,17 @@ public class LaFood
 		
 		while (!QueueLL.isEmpty())
 		{
-			for (int i = 0; i < 3; i++)
+			for (int i = 0; i < Tables.length; i++)
 			{
 				while (time < Tables[i])
 				{
 					System.out.println("Please wait at the bar,\n" + QueueLL.getFront());
-					time = QueueLL.getFront.arrivalTime;
-			
+					time += QueueLL.getFront.arrivalTime;
 				}
+				time = 0;
 			}
 		}
+	}
 	
 	public void readFile() throws IOException
 	{
