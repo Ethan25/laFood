@@ -1,66 +1,72 @@
 import java.util.*;
 
 /**
-@author Harrison Lingren
+@author Ethan Miller
 Defines the Customer object for use in the La Food program.
 */
 
 public class Customer
 {
-  String partyName;
-  String color;
-  String species;
-  int fins;
-  
-  public static int count=0;
+	int arrivalTime;
+	int groupNumber;
+	int bribe;
+	String name;
 
-  /** Default basic constructor  */
-  public Customer()
-  {
-    name=""; color=""; species="";
-	  fins=0;
-	  count++;
-  }
+	/** Default basic constructor  */
+	public Customer()
+	{
+		arrivalTime = 0;
+		groupNumber = 0;
+		bribe = 0;
+		name = "";
+	}
   
-  /**
-    @param n name of the fish
-    @param c color of the fish
-    @param s species of the fish
-    @param f number of fins, if applicable
-  */
+	/**
+	@param a arrival time of customer
+	@param g number of people in group
+	@param b bribe total from customer
+	@param n name of customer
+	*/
+	public Customer(int a, int g, int b, String n)
+	{
+		arrivalTime = a;
+		groupNumber = g;
+		bribe = b;
+		name = n;
+	}
   
-  public Customer(String n,String c,String s, int f)
-  {
-    name=n; color=c; species=s; fins=f;
-	  count++;
-  }
-  
-  /** @param s Scanner (connected to a text file)
-      to read in to initialize the customer */
-      
-  public Fish(Scanner s)
-  {
-    name=s.next();
-	  color=s.next();
-	  species=s.next();
-	  fins=s.nextInt();
-  }
+	/** @param s Scanner (connected to a text file) */
+	public Customer(Scanner s)
+	{
+		arrivalTime = s.nextInt();
+		groupNumber = s.nextInt();
+		bribe = s.nextInt();
+		name = s.next();
+	}
 
-  /**
-    @return the name of the customer
-  */
-  public String getName()
-    { return name; }
-  public String getColor()
-    { return color; }
-  public String getSpecies()
-    { return species; }
-  public int getFins()
-    { return fins; }
+	/** @return the arrival time of the customer */
+	public int getArrivalTime()
+		{ return arrivalTime; }
+	/** @return the number of people in the group */
+	public int getGroupNumber()
+		{ return groupNumber; }
+	/** @return the bribe presented by the customer */
+	public int getBribe()
+		{ return bribe; }
+	/** @return the name of the customer */
+	public String getName()
+		{ return name; }
 	
-  public String toString()
-  {
-    return name+" color="+color+" species="+species+" #fins="+fins;
-  }
+	public String toString()
+	{
+		if (groupNumber > 1)
+		{
+			return ("party " + name + " of " + groupNumber + " people. (time=" + arrivalTime + ")");
+		}
+		else
+		{
+			return ("party " + name + " of " + groupNumber + " person. (time=" + arrivalTime + ")");
+		}
+	}
 
 }
