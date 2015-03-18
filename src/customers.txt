@@ -1,0 +1,8 @@
+A 3 3 50 Merlin
+A 8 2 25 Arthur Pendragon
+T 10
+A 12 2 30 Sir Lancelot
+T 15
+A 17 3 75 The Green Knight
+T 20
+Q
